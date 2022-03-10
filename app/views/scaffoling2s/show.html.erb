@@ -1,0 +1,14 @@
+<div class="jumbotron">
+  <h1 class="display-4">
+  <%= @scaffoling2.first_name %>
+  <%= @scaffoling2.last_name %>
+  </h1>
+  <p class="lead">
+  <%= @scaffoling2.email %>|<%= @scaffoling2.phone %>|<%= @scaffoling2.twitter %>
+  </p>
+  </br>
+  <p class="lead">
+  <%= link_to 'Edit', edit_scaffoling2_path(@scaffoling2),class:"btn btn-dark" %> |
+  <%= link_to 'Back', scaffoling2s_path, class:"btn btn-dark" %>
+  </p>
+</div>

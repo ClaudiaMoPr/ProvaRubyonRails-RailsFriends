@@ -1,0 +1,2 @@
+module Scaffoling2sHelper
+end

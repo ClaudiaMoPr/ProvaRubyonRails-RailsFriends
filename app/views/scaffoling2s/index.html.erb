@@ -1,0 +1,40 @@
+
+<h1>Friends</h1>
+<% if user_signed_in?%>
+  <table class="table table-striped table-bordered table-hover">
+    <thead class= "table table-dark">
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Twitter</th>
+        <th>User Id</th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @scaffoling2s.each do |scaffoling2| %>
+        <% if scaffoling2.user == current_user%>
+          <tr>
+          <td>
+          <%= link_to scaffoling2.first_name + ' '+scaffoling2.last_name, scaffoling2%>
+          </td>
+          <td><%= scaffoling2.email %></td>
+          <td><%= scaffoling2.phone %></td>
+          <td><%= scaffoling2.twitter %></td>
+          <td><%= scaffoling2.user_id %></td>
+          <td><%= link_to 'Edit', edit_scaffoling2_path(scaffoling2), class:"btn btn-dark"  %></td>
+          <td><%= link_to 'Delete', scaffoling2, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger btn-sm"  %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'Add new Friend', new_scaffoling2_path, class:"btn btn-dark" %>
+<% else %>
+<h1> Welcome to your Friends page<h1>
+<% end %>
